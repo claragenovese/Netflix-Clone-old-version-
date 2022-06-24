@@ -2,14 +2,15 @@ import React from 'react'
 import { BsTriangleFill } from 'react-icons/bs'
 import { AiOutlineInfoCircle } from 'react-icons/ai'
 
+const BASE_IMG_URL = "https://image.tmdb.org/t/p/original"
+
 function Main({render: elementArray}) {
-    const BASE_IMG_URL = "https://image.tmdb.org/t/p/original"
 
     const popularElementData = elementArray[0].data
 
     const randomPosition = Math.floor(Math.random() * 10)
-
     const randomMovie = popularElementData[randomPosition]
+
  
     return (
         <main className='main-container'>

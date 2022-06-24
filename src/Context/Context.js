@@ -22,6 +22,20 @@ function ContextProvider({children}){
 
     const [savedMovies, setSavedMovies] = useState([])
 
+    const [viewportWidth, setViewportWidth] = useState(window.innerWidth)
+
+    useEffect(() => {
+        function handleResize() {
+          setViewportWidth(window.innerWidth)
+        }
+    
+        window.addEventListener('resize', handleResize)
+    
+        return () => {
+          window.removeEventListener('resize', handleResize)
+        }
+      })
+
     function actualizeMovieClicked(movieClicked) {
         setNewMovieClicked(movieClicked)
     }
@@ -84,7 +98,8 @@ function ContextProvider({children}){
             moviesCategoriesArr, 
             tvCategoriesArr, 
             savedMovies, addToMyList, removeFromList, 
-            newMovieClicked, actualizeMovieClicked, removeMovieClicked}}>
+            newMovieClicked, actualizeMovieClicked, removeMovieClicked,
+            viewportWidth}}>
             {children}
         </Context.Provider>
     )

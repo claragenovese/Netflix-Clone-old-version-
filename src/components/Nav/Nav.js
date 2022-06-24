@@ -1,27 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import NetflixLogo from './NetflixLogo/NetflixLogo'
 import NavMenu from './NavMenu/NavMenu'
-// import SearchBar from './SearchBar/SearchBar'
 import Login from './Login/Login'
+import { Context } from '../../Context/Context'
 
 export default function Nav() {
+  const{viewportWidth} = useContext(Context)
   const [isScroll, setIsScroll] = useState(false)
-  const [viewportWidth, setViewportWidth] = useState(window.innerWidth)
-
-  useEffect(() => {
-    function handleResize() {
-      setViewportWidth(window.innerWidth)
-    }
-
-    window.addEventListener('resize', handleResize)
-
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  })
 
   function changeNavBackground(){
-    if(window.scrollY > 80) setIsScroll(true)
+    if(window.scrollY > 10) setIsScroll(true)
     else setIsScroll(false)
   }
 

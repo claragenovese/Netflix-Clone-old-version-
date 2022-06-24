@@ -49,8 +49,10 @@
         padding: 2.7em;
         display: flex;
         justify-content: center;
+        align-items: center;
         .click-info-container{
             max-width: 40em;
+            height: fit-content;
             background-color: #141414;
             border-radius: 6px;
             position: relative;
@@ -74,7 +76,7 @@
                 border-top-right-radius: 6px;
             }
             .click-info{
-                padding: 1em 2em 2em 2em;
+                padding: 1em 2em 3em 2em;
                 .click-title{
                     font-size: 1.5rem;
                     margin-top: 1em;
@@ -113,7 +115,7 @@
                 }
             }
         }
-    }
+    } 
 }
 
 

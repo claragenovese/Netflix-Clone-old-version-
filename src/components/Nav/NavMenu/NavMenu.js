@@ -9,7 +9,7 @@ export default function NavMenu({viewportWidth}) {
   return (
     <div className='nav-menu'>
       {
-        viewportWidth < 780 &&
+        viewportWidth < 850 &&
         <div 
           className='collapse-container'
           onClick={()=>setIsMenuDisplay(prev => !prev)} 
