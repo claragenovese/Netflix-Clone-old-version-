@@ -24,10 +24,12 @@ function EachMovie(props){
 
   function displayMovies(){
     return(
-      <img 
-        className='movie-img' 
-        src={`${BASE_IMG_URL}${viewportWidth > 680 ?  item.backdrop_path : item.poster_path}`} 
-      />
+      <div className='img-container'>
+        <img 
+          className='movie-img' 
+          src={`${BASE_IMG_URL}${viewportWidth > 680 ?  item.backdrop_path : item.poster_path}`} 
+        />
+      </div>
     )
   }
 

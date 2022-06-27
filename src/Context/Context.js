@@ -85,7 +85,9 @@ function ContextProvider({children}){
                 setError(err)
             }
             finally{
-                setIsLoading(false)
+                setTimeout(() => {
+                    setIsLoading(false)
+                }, [1600])
             }
         }
 

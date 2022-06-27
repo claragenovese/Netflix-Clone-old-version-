@@ -5,10 +5,17 @@ import {motion} from 'framer-motion'
 
 export default function NavMenu({viewportWidth}) {
   const [isMenuDisplay, setIsMenuDisplay] = useState(false)
- 
+  const [isClicked, setIsClicked] = useState(false)
+
   return (
-    <div className='nav-menu'>
-      {
+    <motion.div 
+      className={isClicked ? 'nav-menu clicked' : 'nav-menu'}
+      initial={{ opacity: 0}}
+      animate={{ opacity: 1}}
+      transition={{ ease: "easeOut", duration: 0.3, delay: 0.8}}
+      onClick={() => setIsClicked(prev => !prev)}
+    >
+      { 
         viewportWidth < 850 &&
         <div 
           className='collapse-container'
@@ -23,12 +30,12 @@ export default function NavMenu({viewportWidth}) {
       <ul 
         className={ isMenuDisplay ? 'nav-ul display-collapse-menu' : 'nav-ul'}
       >
-        <li className='nav-li'><Link to="/">Home</Link></li>
-        <li className='nav-li'><Link to="/shows">Series</Link></li> 
-        <li className='nav-li'><Link to="/movies">Movies</Link></li>   
-        <li className='nav-li'><Link to="/my_list">My List</Link></li>
+        <Link to="/"><li className='nav-li'>Home</li></Link>
+        <Link to="/shows"><li className='nav-li'>Series</li></Link>
+        <Link to="/movies"><li className='nav-li'>Movies</li></Link>
+        <Link to="/my_list"><li className='nav-li'>My List</li></Link>
       </ul>
-    </div>
+    </motion.div>
   )
 }
 

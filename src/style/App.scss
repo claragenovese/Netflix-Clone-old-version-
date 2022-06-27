@@ -2,9 +2,7 @@
 @import '../components/Nav/nav';
 @import '../components/Main/main';
 @import '../components/Titles/titles';
-@import '../components/Footer/footer';
-@import '../pages/logPages/logIn/logSection';
-@import '../pages/logPages/signUp/signUp';
+@import '../pages/logPages/logSection';
 @import '../pages/watchMovie/watchMovie';
 @import '../pages/myList/myList';
 
@@ -21,3 +19,17 @@ body{
     color: #fff;
     overflow-x: hidden;
 }
+
+.loading-container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3em;
+    .netflix-logo{
+        font-size: 3rem;
+    }
+}
+

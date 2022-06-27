@@ -16,7 +16,7 @@ const animationVariants = {
 }
 
 export default function ShowMovieInformation({movie}){
-    console.log(movie)
+
     const [isSaved, setIsSaved] = useState(false)
     const [isOpen, setIsOpen] = useState(true)
     
@@ -49,7 +49,7 @@ export default function ShowMovieInformation({movie}){
             initial={{opacity: 0}}
             animate={isOpen ? "open" : "closed"}
             variants={animationVariants}
-            transition={{ ease: "easeOut", duration: 0.3, delay: 0.1 }}>
+            transition={{ ease: "easeOut", duration: 0.2, delay: 0.1 }}>
                 <div className="click-info-container">
                     <AiFillCloseCircle 
                         className="close-icon" 
@@ -70,7 +70,10 @@ export default function ShowMovieInformation({movie}){
                                         onClick={saveMovie}/>}
                             </div>
                             <Link to="watchMovie">
-                                <div className='info-icon'> 
+                                <div 
+                                    className='info-icon'
+                                    onClick={handleClose}
+                                > 
                                     <BsPlayFill className='icon play'/>
                                 </div>
                             </Link> 
